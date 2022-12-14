@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class XPaths {
+public class XPathGoogleSearchBoxDropDown {
 
 	public static void main(String[] args) throws InterruptedException {
 
@@ -35,7 +35,7 @@ public class XPaths {
 
 		for (int i = 0; i < suggestionlist.size(); i++) {
 			System.out.println(suggestionlist.get(i).getText());
-			if (suggestionlist.get(i).getText().contains("testing types")) {
+			if (suggestionlist.get(i).getText().contains("testing jobs in chennai")) {
 				suggestionlist.get(i).click();
 				break;
 			}

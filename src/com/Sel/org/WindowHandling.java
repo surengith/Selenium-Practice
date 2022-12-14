@@ -1,6 +1,8 @@
 package com.Sel.org;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -20,7 +22,7 @@ public class WindowHandling {
 		
 		driver.manage().deleteAllCookies();
 
-		driver.get("https://nxtgenaiacademy.com/multiplewindows/");
+		/*driver.get("https://nxtgenaiacademy.com/multiplewindows/");
 
 		String parent = driver.getWindowHandle();
 		System.out.println(parent);
@@ -37,9 +39,20 @@ public class WindowHandling {
 		String childid = it.next();
 		
 		System.out.println("Parent Window ID: "+parentid);
-		System.out.println("Child Window ID: "+childid);
+		System.out.println("Child Window ID: "+childid); */
 		
-		driver.quit();
+		
+		driver.get("https://www.amazon.in/");
+		
+		driver.findElement(By.linkText("Facebook")).click();
+		
+		Set<String> window1 = driver.getWindowHandles();
+		
+		List<String> window2 = new ArrayList<String>(window1);
+		
+		driver.switchTo().window(window2.get(0));
+		
+		
 
 	}
 
